@@ -60,6 +60,20 @@ export class TooltipDirective implements OnDestroy {
       const contentEl = this.renderer.createText(this.tooltip);
       return [ [ contentEl ] ];
     }
+
+    if (this.tooltip instanceof TemplateRef) {
+      const context = {};
+      const viewRef = this.tooltip.createEmbeddedView(context);
+
+      return [ viewRef.rootNodes ];
+    }
+
+    if (this.tooltip instanceof Function) {
+      const factory = this.resolver.resolveComponentFactory(this.tooltip);
+      const componentRef = factory.create(this.injector);
+
+      return [ [ componentRef.location.nativeElement ] ];
+    }
   }
 
   destroy() {

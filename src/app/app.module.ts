@@ -3,10 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TooltipModule } from './modules/tooltip/tooltip.module';
+import { TestComponent } from './components/test.component';
 
 @NgModule({
+  entryComponents: [
+    TestComponent
+  ],
   declarations: [
-    AppComponent
+    AppComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

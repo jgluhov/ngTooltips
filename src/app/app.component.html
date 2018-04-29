@@ -1,2 +1,8 @@
 <p tooltip="Tooltip from text">Tooltip from text</p>
 
+<p [tooltip]="tooltipTemplate">Tooltip from template</p>
+<ng-template #tooltipTemplate>
+  <span>Wow Template Tooltip</span>
+</ng-template>
+
+<p [tooltip]="testComponent">Tooltip from component</p>
