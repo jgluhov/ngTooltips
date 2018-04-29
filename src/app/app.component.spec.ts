@@ -1,13 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { TooltipComponent } from './components/tooltip/tooltip.component';
+import { TooltipModule } from './modules/tooltip/tooltip.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        TooltipModule
+      ],
       declarations: [
-        AppComponent,
-        TooltipComponent
+        AppComponent
       ],
     }).compileComponents();
   }));

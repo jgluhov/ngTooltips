@@ -8,14 +8,14 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '.tooltip-container'
+  selector: '.tooltip__container'
 })
 export class TooltipContainerDirective {}
 
 @Component({
   selector: 'tooltip',
   template: `
-    <div class="tooltip-container" [ngStyle]="{top: top}">
+    <div class="tooltip__container" [ngStyle]="{top: top}">
       <ng-content></ng-content>
     </div>
   `,

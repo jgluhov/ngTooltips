@@ -2,25 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {
-  TooltipComponent,
-  TooltipDirective,
-  TooltipContainerDirective
-} from './components/tooltip';
-
+import { TooltipModule } from './modules/tooltip/tooltip.module';
 
 @NgModule({
-  entryComponents: [
-    TooltipComponent
-  ],
   declarations: [
-    AppComponent,
-    TooltipComponent,
-    TooltipDirective,
-    TooltipContainerDirective
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
